@@ -1,0 +1,16 @@
+# Example crontab for `cronwise check`
+MAILTO=ops@example.com
+
+# weekday backup at 09:30
+30 9 * * 1-5 /usr/local/bin/backup.sh
+
+# every 15 minutes during business hours
+*/15 9-17 * * 1-5 /usr/local/bin/poll.sh
+
+# monthly report on the 1st at 06:00
+0 6 1 * * /usr/local/bin/report.sh
+
+# typo on purpose: minute 61 is out of range
+61 * * * * /usr/local/bin/broken.sh
+
+@reboot /usr/local/bin/warm-cache.sh
